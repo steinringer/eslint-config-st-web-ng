@@ -1,0 +1,17 @@
+{
+  "name": "eslint-config-st-web-ng",
+  "version": "1.0.0",
+  "description": "ESlint config for angular web development at Steinringer WEB and IT solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "Steinringer WEB and IT solutions",
+  "license": "ISC",
+  "dependencies": {
+    "eslint-plugin-angular": "^3.0.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 4"
+  }
+}
