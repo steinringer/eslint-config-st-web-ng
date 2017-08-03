@@ -23,6 +23,7 @@ module.exports = {
             'function'
         ],
         'no-use-before-define': 0,
+        "no-mixed-spaces-and-tabs": 0,
         'angular/controller-name': [
             'error',
             '[a-z][\\w\\.]+Ctrl'
