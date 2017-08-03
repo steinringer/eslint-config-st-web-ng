@@ -22,7 +22,7 @@ module.exports = {
             'error',
             'function'
         ],
-        'no-use-before-define' : 0,
+        'no-use-before-define': 0,
         'angular/controller-name': [
             'error',
             '[a-z][\\w\\.]+Ctrl'
@@ -40,6 +40,22 @@ module.exports = {
     },
     globals: {
         angular: true,
-        _: true
+        _: true,
+        d3: true,
+        $: true,
+        Notification: true,
+        LocalizationProvider: true,
+        JL: true,
+        H: true,
+        ModuleRegister: true,
+        PDFJS: true,
+        PackageData: true,
+        GroupPackages: true,
+        ScrollHandler: true,
+        Snap: true,
+        UrlCreator: true,
+        removeResizeListener: true,
+        addResizeListener: true,
+        tinyMCE: true
     }
 };
