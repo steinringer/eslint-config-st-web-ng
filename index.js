@@ -39,6 +39,7 @@ module.exports = {
         'angular/no-services': 0,
         'angular/prefer-component': 0,
         'angular/di-unused': 2,
+		'angular/function-type' : 0
     },
     globals: {
         angular: true,
