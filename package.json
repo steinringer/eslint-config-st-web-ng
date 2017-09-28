@@ -1,6 +1,6 @@
 {
   "name": "@steinringer/eslint-config-st-web-ng",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "ESlint config for angular web development at Steinringer WEB and IT solutions",
   "main": "index.js",
   "scripts": {
