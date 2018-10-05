@@ -16,5 +16,6 @@ module.exports = {
     UrlCreator: true,
     removeResizeListener: true,
     addResizeListener: true,
-    tinyMCE: true
+    tinyMCE: true,
+    slugg: true,
 }
