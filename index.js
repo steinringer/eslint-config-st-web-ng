@@ -154,7 +154,8 @@ module.exports = {
             }
         ],
         // '@typescript-eslint/no-use-before-define': 'off',
-        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-var-requires': 'off', // need to use require for dynamic imports
+        '@typescript-eslint/no-require-imports': 'off', // need to use require for dynamic imports
         '@typescript-eslint/prefer-for-of': 'error',
         '@typescript-eslint/prefer-function-type': 'error',
         '@typescript-eslint/prefer-namespace-keyword': 'error',
