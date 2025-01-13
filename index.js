@@ -330,6 +330,19 @@ module.exports = {
             'error',
             'single'
         ],
+
+        'angular/file-name': 0,
+        'angular/constant-name': 0,
+        'angular/controller-as-route': 0,
+        'angular/controller-as-vm': 0,
+        'angular/controller-as': 0,
+        'angular/no-controller': 0,
+        'angular/no-inline-template': 0,
+        'angular/no-service-method': 0,
+        'angular/no-services': 0,
+        'angular/prefer-component': 0,
+        'angular/di-unused': 2,
+        'angular/function-type': 0
     },
     globals
 };
