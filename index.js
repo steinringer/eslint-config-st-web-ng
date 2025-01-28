@@ -1,53 +1,5 @@
 const globals = require('./globals');
 
-// module.exports = {
-//     env: {
-//         'browser': true,
-//         'es6': true
-//     },
-//     parser: "babel-eslint",
-//     extends: [
-//         'eslint:recommended',
-//         'plugin:angular/johnpapa'
-//     ],
-//     rules: {
-//         'indent': 0,
-//         'linebreak-style': 0,
-//         'quotes': [
-//             'error',
-//             'single'
-//         ],
-//         'semi': [
-//             'error',
-//             'always'
-//         ],
-//         'strict': [
-//             'error',
-//             'function'
-//         ],
-//         'no-use-before-define': 0,
-//         "no-mixed-spaces-and-tabs": 0,
-//         'angular/controller-name': [
-//             'error',
-//             '[a-z][\\w\\.]+Ctrl'
-//         ],
-//         'angular/file-name': 0,
-//         'angular/constant-name': 0,
-//         'angular/controller-as-route': 0,
-//         'angular/controller-as-vm': 0,
-//         'angular/controller-as': 0,
-//         'angular/no-controller': 0,
-//         'angular/no-inline-template': 0,
-//         'angular/no-service-method': 0,
-//         'angular/no-services': 0,
-//         'angular/prefer-component': 0,
-//         'angular/di-unused': 2,
-// 		'angular/function-type' : 0
-//     },
-//     globals
-// };
-
-
 module.exports = {
     env: {
         'browser': true,
@@ -70,7 +22,7 @@ module.exports = {
                 'default': 'array'
             }
         ],
-        // TODO: Cannot find module
+        // TODO: Cannot find module, analyse solutions, seems to be helpfull rule
         // '@typescript-eslint/ban-types': [
         //     'error',
         //     {
@@ -171,7 +123,8 @@ module.exports = {
             'any',
             'Number',
             'number',
-            'String',
+            // Conflict with "typescript-string-operations"
+            // 'String',
             'string',
             'Boolean',
             'boolean',
@@ -180,7 +133,7 @@ module.exports = {
         ],
         'id-match': 'error',
         'import/order': [
-            'error',
+            'warn',
             {
                 'alphabetize': {
                     'caseInsensitive': true,
@@ -246,14 +199,14 @@ module.exports = {
         ],
         'jsdoc/check-alignment': 'error',
         'jsdoc/check-indentation': 'error',
-        'jsdoc/newline-after-description': 'error',
+        // 'jsdoc/newline-after-description': 'error',
         'max-classes-per-file': 'off',
         'max-len': 'off',
         'new-parens': 'error',
         'no-bitwise': 'error',
         'no-caller': 'error',
         'no-cond-assign': 'error',
-        'no-console': 'error',
+        'no-console': ["error", { allow: ["warn", "error", "info"] }],
         'no-debugger': 'error',
         'no-empty': 'off',
         'no-empty-function': 'off',
@@ -301,7 +254,7 @@ module.exports = {
             'error',
             'single'
         ],
-        
+
     },
     globals
 };
