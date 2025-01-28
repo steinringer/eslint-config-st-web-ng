@@ -1,6 +1,6 @@
 {
   "name": "@steinringer/eslint-config-st-web-ng",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "ESlint config for angular web development at Steinringer WEB and IT solutions",
   "main": "index.js",
   "scripts": {
@@ -9,9 +9,15 @@
   "author": "Steinringer WEB and IT solutions",
   "license": "ISC",
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.19.1",
+    "@typescript-eslint/parser": "^8.19.1",
+    "eslint": "^8.57.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jsdoc": "^50.6.1",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-angular": "^3.0.0"
   },
   "peerDependencies": {
-    "eslint": ">= 4"
+    "eslint": ">= 8"
   }
 }
