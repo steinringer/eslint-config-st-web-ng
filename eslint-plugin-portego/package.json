@@ -1,0 +1,28 @@
+{
+  "name": "eslint-plugin-portego",
+  "version": "1.0.2-local.0",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "npm run build",
+    "test": "npm run build && node tests/run-tests.js"
+  },
+  "dependencies": {
+    "@typescript-eslint/utils": "8.35.0",
+    "parse5": "7.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "eslint": "^8.57.1",
+    "typescript": "5.4"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": ">=8",
+    "eslint": ">=8",
+    "typescript": ">=4.8.4 <5.9"
+  }
+}

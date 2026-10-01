@@ -11,7 +11,8 @@ module.exports = {
         'eslint-plugin-jsdoc',
         'eslint-plugin-prefer-arrow',
         'eslint-plugin-import',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'portego'
     ],
     root: true,
     rules: {
@@ -69,6 +70,15 @@ module.exports = {
                 ],
                 'leadingUnderscore': 'allow',
                 'trailingUnderscore': 'forbid'
+            },
+            {
+                'selector': 'class',
+                'format': ['PascalCase']
+            },
+            {
+                'selector': 'interface',
+                'format': ['PascalCase'],
+                'custom': { 'regex': '^I[A-Z]', 'match': true }
             }
         ],
         '@typescript-eslint/no-empty-function': 'off',
@@ -250,11 +260,31 @@ module.exports = {
         ],
         'use-isnan': 'error',
         'valid-typeof': 'off',
+        'portego/private-constructor-injection': 'warn',
+        'portego/constructor-property-access': 'warn',
+        'portego/notification-catch-shorthand': 'warn',
+        'portego/component-file-order': 'warn',
+        'portego/component-member-order': 'warn',
+        'portego/st-form-options': 'warn',
+        'portego/role-file-name': 'warn',
         'quotes': [
             'error',
             'single'
         ],
 
     },
-    globals
+    globals,
+    overrides: [{
+        files: ['**/*.ts'],
+        excludedFiles: ['**/*.d.ts', '**/*.generated.ts'],
+        parserOptions: {
+            project: './tsconfig.json'
+        }
+    }, {
+        files: ['**/*.component.ts'],
+        rules: {
+            '@typescript-eslint/member-ordering': 'off',
+            'portego/grid-types': 'warn'
+        }
+    }]
 };
