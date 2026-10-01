@@ -22,16 +22,14 @@ Extend in ```.eslintrc.json``` file
 
 ## Local Portego convention trial
 
-The config enables source-file checks for component order, role filenames, forms,
-grids, interfaces, hybrid constructor injections, and error-handler shorthand.
-Additional page-layout and template rules are available in the plugin but are
-not enabled by this config. Filename checks use registration JSON to identify
+The config enables all 18 Portego plugin rules as warnings, including page-layout
+and template checks. Filename checks use registration JSON to identify
 hybrid pages. Install both local packages in a module
 while testing; the config declares the plugin as a peer dependency.
 
-The optional page rule uses literal `route.component` values in the owning
+The page rule uses literal `route.component` values in the owning
 package's `Configuration/Packages/<Module>` JSON files. It skips unregistered
-components and dynamic routes. Optional template rules check the page wrapper
+components and dynamic routes. Template rules check the page wrapper
 and `$ctrl` access in hybrid templates. The external-template rule checks only
 that a literal relative `templateUrl` points to an existing file. Templates
 may be shared; it does not enforce placement or matching basenames.
@@ -54,7 +52,7 @@ requires the standard Promise method and the resolved notification handler.
 Template visibility skips literal and rebound controller scopes; route-only
 outlets do not have to own page layout. Unresolved evidence is not a violation.
 Resource-key casing is not checked: the convention and the current browser
-serializer disagree. The optional resource rule still checks placeholder values
+serializer disagree. The resource rule still checks placeholder values
 and resolved resource-class names. It does not ask callers to change key casing.
 Repeat-start/end blocks preserve their controller scope. A template that assigns
 the `$ctrl` alias is skipped because that assignment can affect sibling bindings.
@@ -67,6 +65,6 @@ as `[unresolved]`, not as convention violations. Its `--strict` exit code is 2
 for an incomplete run, 1 for violations, and 0 otherwise. Programmatic callers
 can pass an unresolved-message callback as the third argument to `validate`.
 
-The optional `async-service-await` rule reports direct discarded Promise-like
+The `async-service-await` rule reports direct discarded Promise-like
 calls inside the wrapper. It does not track stored promises or branch ownership.
 Use standard promise checks for broader coverage where their scope is suitable.

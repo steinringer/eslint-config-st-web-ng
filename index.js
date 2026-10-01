@@ -267,6 +267,16 @@ module.exports = {
         'portego/component-member-order': 'warn',
         'portego/st-form-options': 'warn',
         'portego/role-file-name': 'warn',
+        'portego/hybrid-page-convention': 'warn',
+        'portego/external-template': 'warn',
+        'portego/action-callback-name': 'warn',
+        'portego/injection-token-name': 'warn',
+        'portego/hybrid-inject-token-type': 'warn',
+        'portego/hybrid-template-member-visibility': 'warn',
+        'portego/hybrid-selector-template-case': 'warn',
+        'portego/hybrid-page-template': 'warn',
+        'portego/async-service-await': 'warn',
+        'portego/resource-references': 'warn',
         'quotes': [
             'error',
             'single'
@@ -281,7 +291,7 @@ module.exports = {
             project: './tsconfig.json'
         }
     }, {
-        files: ['**/*.component.ts'],
+        files: ['**/*.component.ts', '**/*.component.ajs.ts'],
         rules: {
             '@typescript-eslint/member-ordering': 'off',
             'portego/grid-types': 'warn'

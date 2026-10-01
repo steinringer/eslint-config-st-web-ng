@@ -274,6 +274,18 @@ tester.run('resource-references', require('..').rules['resource-references'], {
 
 async function run() {
     const webRoot = path.resolve(__dirname, '..');
+    const sharedConfig = new ESLint({
+        cwd: path.resolve(webRoot, '..'),
+        useEslintrc: false,
+        overrideConfig: require('../../index')
+    });
+    for (const filename of ['example.component.ts', 'example.ajs.component.ts', 'example.component.ajs.ts']) {
+        const config = await sharedConfig.calculateConfigForFile(filename);
+        for (const rule of Object.keys(require('..').rules)) {
+            assert.strictEqual(config.rules[`portego/${rule}`][0], 'warn', `${rule} must be enabled for ${filename}`);
+        }
+        assert.strictEqual(config.rules['@typescript-eslint/member-ordering'][0], 'off');
+    }
     const eslint = new ESLint({
         cwd: webRoot,
         useEslintrc: false,
