@@ -11,7 +11,8 @@ module.exports = {
         'eslint-plugin-jsdoc',
         'eslint-plugin-prefer-arrow',
         'eslint-plugin-import',
-        '@typescript-eslint'
+        '@typescript-eslint',
+        'portego'
     ],
     root: true,
     rules: {
@@ -69,6 +70,15 @@ module.exports = {
                 ],
                 'leadingUnderscore': 'allow',
                 'trailingUnderscore': 'forbid'
+            },
+            {
+                'selector': 'class',
+                'format': ['PascalCase']
+            },
+            {
+                'selector': 'interface',
+                'format': ['PascalCase'],
+                'custom': { 'regex': '^I[A-Z]', 'match': true }
             }
         ],
         '@typescript-eslint/no-empty-function': 'off',
@@ -250,11 +260,41 @@ module.exports = {
         ],
         'use-isnan': 'error',
         'valid-typeof': 'off',
+        'portego/private-constructor-injection': 'warn',
+        'portego/constructor-property-access': 'warn',
+        'portego/notification-catch-shorthand': 'warn',
+        'portego/component-file-order': 'warn',
+        'portego/component-member-order': 'warn',
+        'portego/st-form-options': 'warn',
+        'portego/role-file-name': 'warn',
+        'portego/hybrid-page-convention': 'warn',
+        'portego/external-template': 'warn',
+        'portego/action-callback-name': 'warn',
+        'portego/injection-token-name': 'warn',
+        'portego/hybrid-inject-token-type': 'warn',
+        'portego/hybrid-template-member-visibility': 'warn',
+        'portego/hybrid-selector-template-case': 'warn',
+        'portego/hybrid-page-template': 'warn',
+        'portego/async-service-await': 'warn',
+        'portego/resource-references': 'warn',
         'quotes': [
             'error',
             'single'
         ],
 
     },
-    globals
+    globals,
+    overrides: [{
+        files: ['**/*.ts'],
+        excludedFiles: ['**/*.d.ts', '**/*.generated.ts'],
+        parserOptions: {
+            project: './tsconfig.json'
+        }
+    }, {
+        files: ['**/*.component.ts', '**/*.component.ajs.ts'],
+        rules: {
+            '@typescript-eslint/member-ordering': 'off',
+            'portego/grid-types': 'warn'
+        }
+    }]
 };

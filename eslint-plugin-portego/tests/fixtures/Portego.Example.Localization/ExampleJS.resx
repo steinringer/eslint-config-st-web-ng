@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <data name="Welcome" xml:space="preserve"><value>Welcome, {0}.</value></data>
+  <data name="Saved" xml:space="preserve"><value>Saved.</value></data>
+</root>
